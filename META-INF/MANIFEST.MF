@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: decorator
+Bundle-SymbolicName: decorator
+Bundle-Version: 1.0.0.qualifier
+Export-Package: eu.jpereira.trainings.designpatterns.structural.decorator,
+ eu.jpereira.trainings.designpatterns.structural.decorator.channel,
+ eu.jpereira.trainings.designpatterns.structural.decorator.channel.decorator,
+ eu.jpereira.trainings.designpatterns.structural.decorator.channel.dummy,
+ eu.jpereira.trainings.designpatterns.structural.decorator.channel.spy
