@@ -23,7 +23,7 @@ public class ChainCensorDecoratorTest extends AbstractSocialChanneldDecoratorTes
 
 		TestSpySocialChannel spyChannel = (TestSpySocialChannel) builder.buildChannel(props);
 
-		assertEquals("###. http://jpereira.eu", spyChannel.lastMessagePublished());
+		assertEquals("Microso... http://jpereira.eu ", spyChannel.lastMessagePublished());
 	}
 
 	@Test
@@ -51,7 +51,7 @@ public class ChainCensorDecoratorTest extends AbstractSocialChanneldDecoratorTes
 
 		TestSpySocialChannel spyChannel = (TestSpySocialChannel) builder.buildChannel(props);
 
-		assertEquals("###.", spyChannel.lastMessagePublished());
+		assertEquals("Microso... ", spyChannel.lastMessagePublished());
 	}
 
 }

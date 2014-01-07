@@ -16,14 +16,29 @@ public class WordCensor extends SocialChannelDecorator {
 	// TODO
 	@Override
 	public void deliverMessage(String message) {
-		if (censoredWord.equals("Microsoft")) {
-			StringBuilder builder = new StringBuilder();
-			builder.append("###");
-			builder.append(message.substring(censoredWord.length()));
-			message = builder.toString();
+		StringBuilder builder = new StringBuilder();
+		String newMessage = "";
+		String[] tablica = message.split(" ");
+		System.out.println("moj string przed dzialaniem " + message);
+		for (int i = 0; i < tablica.length; i++) {
+			if (tablica[i].equals("Microsoft")) {
+				tablica[i] = "###";
+			}
+			newMessage = newMessage + tablica[i] + " ";
 		}
 
-		delegate.deliverMessage(message);
+		builder.append(newMessage);
+		newMessage = builder.toString();
+		delegate.deliverMessage(newMessage);
+		System.out.println("moj string po dzialaniu " + newMessage);
+		// if (censoredWord.equals("Microsoft")) {
+		// StringBuilder builder = new StringBuilder();
+		// builder.append("###");
+		// builder.append(message.substring(censoredWord.length()));
+		// message = builder.toString();
+		// }
+		//
+		// delegate.deliverMessage(message);
 	}
 
 }

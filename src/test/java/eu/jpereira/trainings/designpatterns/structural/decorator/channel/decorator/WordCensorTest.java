@@ -19,10 +19,10 @@ public class WordCensorTest extends AbstractSocialChanneldDecoratorTest {
 		SocialChannelProperties props = new SocialChannelProperties().putProperty(SocialChannelPropertyKey.NAME, TestSpySocialChannel.NAME);
 
 		SocialChannel channel = builder.with(new WordCensor("Microsoft")).getDecoratedChannel(props);// TODO
-		channel.deliverMessage("Microsoft Windows is great!!");
+		channel.deliverMessage("Microsoft Windows is great!! ");
 		// Spy channel. Should get the one created before
 		TestSpySocialChannel spyChannel = (TestSpySocialChannel) builder.buildChannel(props);
-		assertEquals("### Windows is great!!", spyChannel.lastMessagePublished());
+		assertEquals("### Windows is great!! ", spyChannel.lastMessagePublished());
 	}
 
 }
